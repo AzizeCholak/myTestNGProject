@@ -1,0 +1,33 @@
+******EXCEL AUTOMATION*****
+We use excel for especially Data Driven Testing
+Data Driven Testin (DDT) is done MULTIPLE DATA
+
+-------------------------------------
+In my current framework, I get the test data from excel
+For example, I use multiple different test credentials for login test
+I have employee profile, customer service, admin, customer profiles in excel sheet to test
+-----------------------------------------------
+
+I use ExcelUtil class for testing using excel
+In ExcelUtil, there are many reusable method to make development faster and accurate
+----------------------------------
+*****EXAMPLE*****
+
+    ExcelUtil excelUtil;
+    //    Create a List of Map of String to store the username-password list
+    List<Map<String,String>> testData;
+
+    @Test
+        public void employeeLoginTest(){
+    //        path of the excel sheet
+            String path = "./src/test/java/resources/mysmoketestdata.xlsx";
+    //        sheet name on the excel sheet
+            String sheetName="employee_login_info";
+    //        Create the class object
+            excelUtil = new ExcelUtil(path,sheetName);
+    //        Get the data using any proper excel util method
+    //        getDataList() => return the data list as List of Map of String
+            testData=excelUtil.getDataList();
+            System.out.println(testData);//Testing if username password list acce
+        }
+    }

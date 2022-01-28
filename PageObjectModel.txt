@@ -1,0 +1,20 @@
+When user goes to registration page
+And enter all fields
+Then user should be able to register
+https://gmibank.com/account/register
+1.Create page objects in Registration under pages package
+ssn, firstName, lastName
+ @FindBy(id = "ssn")
+    public WebElement ssn;
+
+ 2.Create a Test class Day15_RegistrationTest in smoke test
+ a. Go to the application
+     i. get the application url from configuration reader
+      Driver.getDriver().get(ConfigurationReader.getProperty("gmi_registration_url"));
+ b.Type ssn number
+      i.Create RegistraationPage object to get access to that page object
+          RegistrationPage registrationPage = new RegistrationPage();
+      ii. Then type the ssn
+         registrationPage.ssn.sendKeys("111111111");
+
+ 3.
