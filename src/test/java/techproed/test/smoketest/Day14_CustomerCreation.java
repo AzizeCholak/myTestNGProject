@@ -12,9 +12,9 @@ import techproed.utilities.ReusableMethods;
 import java.io.IOException;
 
 public class Day14_CustomerCreation {
-    LoginPage loginPage = new LoginPage();
-    EmployeeDefaultPage employeeDefaultPage = new EmployeeDefaultPage();
-    CreateCustomerPage createCustomerPage = new CreateCustomerPage();
+    LoginPage loginPage;
+    EmployeeDefaultPage employeeDefaultPage;
+    CreateCustomerPage createCustomerPage;
     @Test
     public void createCustomerAsEmployee() throws IOException {
         Driver.getDriver().get(ConfigurationReader.getProperty("gmi_login_url"));

@@ -7,7 +7,7 @@ import techproed.utilities.ConfigurationReader;
 import techproed.utilities.Driver;
 
 public class Day15_RegistrationTest {
-    RegistrationPage registrationPage = new RegistrationPage();
+    RegistrationPage registrationPage;
 
     @Test
     public void registrationTest(){

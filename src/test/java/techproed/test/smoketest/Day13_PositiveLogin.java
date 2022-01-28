@@ -48,6 +48,7 @@ public class Day13_PositiveLogin {
     @Test
     public void positiveLogin() throws InterruptedException {
         Driver.getDriver().get(ConfigurationReader.getProperty("gmi_login_url"));
+        loginPage = new LoginPage();
         loginPage.loginDropDown.click();
         loginPage.signInButton.click();
         loginPage.userName.sendKeys(ConfigurationReader.getProperty("employee_username"));
