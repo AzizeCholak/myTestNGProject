@@ -1,6 +1,7 @@
 package techproed.test.smoketest;
 
 import org.openqa.selenium.By;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import techproed.pages.RegistrationPage;
 import techproed.utilities.ConfigurationReader;
@@ -22,5 +23,9 @@ public class Day15_RegistrationTest {
 //       Then use it in the test class
 //       DO MANUAL TESTING FIRST
 
+    }
+    @AfterMethod
+    public void tearDown(){
+        Driver.closeDriver();
     }
 }

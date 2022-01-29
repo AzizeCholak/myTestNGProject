@@ -3,6 +3,7 @@ package techproed.test;
 import com.github.dockerjava.api.model.CpuStatsConfig;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import techproed.pages.LoginPage;
 import techproed.utilities.ConfigurationReader;
@@ -44,6 +45,10 @@ public class Day15_JSUtilsTests {
         JSUtils.clickElementByJS(loginPage.signInButton);
         JSUtils.flash(loginPage.loginButton);
 
+    }
+    @AfterMethod
+    public void tearDown(){
+        Driver.closeDriver();
     }
 
 

@@ -1,5 +1,6 @@
 package techproed.test.smoketest;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import techproed.pages.LoginPage;
 import techproed.utilities.ConfigurationReader;
@@ -57,5 +58,9 @@ public class Day13_PositiveLogin {
         Thread.sleep(3000);
         loginPage.loginButton.click();
 
+    }
+    @AfterMethod
+    public void tearDown(){
+        Driver.closeDriver();
     }
 }

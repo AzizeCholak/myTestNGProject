@@ -1,5 +1,6 @@
 package techproed.test;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import techproed.utilities.ConfigurationReader;
 import techproed.utilities.Driver;
@@ -18,6 +19,9 @@ public class Day13_FirstDriverClass {
         Driver.getDriver().navigate().to(ConfigurationReader.getProperty("google_url"));
 
         System.out.println("Google Title : "+Driver.getDriver().getTitle());
+    }
+    @AfterMethod
+    public void tearDown(){
         Driver.closeDriver();
     }
 }

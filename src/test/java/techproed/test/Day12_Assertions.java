@@ -1,8 +1,10 @@
 package techproed.test;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import techproed.utilities.Driver;
 
 public class Day12_Assertions {
     /*/
@@ -43,5 +45,9 @@ public class Day12_Assertions {
         Sometimes I prefer using soft assertion. When I write my initial test cases. At the end i can check what is wrong
         For many test data sometimes I should prefer to see which ones will fail, which ones will pass.
          */
+    }
+    @AfterMethod
+    public void tearDown(){
+        Driver.closeDriver();
     }
 }
